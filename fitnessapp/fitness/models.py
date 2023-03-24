@@ -4,6 +4,9 @@ class Exercise(models.Model):
 	name = models.CharField(max_length=30)
 	notes = models.CharField(max_length=200)
 
+	def __str__(self):
+		return f"{self.name}: {self.notes}"
+
 class CardioExercise(Exercise):
     seconds = models.PositiveIntegerField(default=0)
     
